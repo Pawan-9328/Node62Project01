@@ -1,0 +1,14 @@
+REST API - JSON
+
+GET /users - HTML Document Render 
+GET /api/ users - List all users JSON - Done
+GET /users/1 - Get the user with ID 1
+GET /users2 - Get the user with ID 2
+
+POST / users = Create new user 
+PATCH / users - Edit the users with ID 1
+
+DELETE /users/1 - Delete the user with ID 1
+
+//..Mackaro.com - generates fake data for testing purpose.
+
