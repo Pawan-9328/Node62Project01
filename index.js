@@ -19,21 +19,43 @@ app.get('/api/users', (req, res) => {
    return res.json(users);
 });
 
-app.get("/api/users/:id", (req, res) => {
+//..merge id [ create only one id.....]
+//called grouping
+app.route('/api/users/:id').get((req, res) =>{{
    const id = Number(req.params.id);
    const user = users.find((user) => user.id === id);
    return res.json(user);
-});
+}})
+.put((req, res) => {
+   //Edit user with id 
+  return res.json({status: 'Pending'});
+})
 
-app.post('/api/users', (req, res) =>{
+.delete((req, res) => {
+  return res.json({status: 'Delete'});
+
+})
+
+// app.get("/api/users/:id", (req, res) => {
+   
+// });
+
+app.post('/api/users/:id', (req, res) =>{
     //..TODO: Create new User 
     return res.json({status: "pending"});
-});
+})
 
-app.patch('/api/users', (req, res) =>{
-   //..TODO: CEdit the user with id 
-   return res.json({status: "pending"});
-});
+
+// app.patch('/api/users/:id', (req, res) =>{
+//    //..TODO: CEdit the user with id 
+//    return res.json({status: "pending"});
+// });
+
+// app.delete('/api/users/:id', (req, res) =>{
+//    //..TODO: CEdit the user with id 
+//    return res.json({status: "pending"});
+// });
+
 
 app.listen(PORT, () => console.log(`Server Started at Port ${PORT}`)
 );
