@@ -7,9 +7,35 @@ const app = express();
 const PORT = 8000;
 
 //...Middleware - plugin....
+//front value convert in object and sent that value in req.body 
 app.use(express.urlencoded({ extended: false }));
+  
+//.....this middleware hold request....
+// app.use((req, res, next ) =>{
+// console.log('Hello from middleware  1');
+
+// });
 
 
+//  in first fun code .. without next middleware fun ko return krna but if using next means access to a head... 
+
+// second fun code
+app.use((req, res, next) =>{
+ fs.appendFile('log.txt',
+  `${Date.now()}: ${req.method}: ${req.path} \n`,
+   (err, data) =>{
+   next();
+ }
+  );
+   // console.log('Hello from middlware 1');
+    //req.myUserName = 'keshav.dev';
+    
+    //return res.json({mgs: 'Hello from middlware 1'});
+});
+
+
+  
+ 
 //..Routes
 app.get('/users', (req, res) => {
    const html = `
@@ -21,6 +47,7 @@ app.get('/users', (req, res) => {
 
 //...REST API...
 app.get('/api/users', (req, res) => {
+   //console.log('I am in get route. ', req.myUserName);
    return res.json(users);
 });
 
