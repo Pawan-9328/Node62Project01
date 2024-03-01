@@ -1,0 +1,3 @@
+Sehema - Define the structure 
+Sehema - Model 
+ Using Model we do CRUD operation 

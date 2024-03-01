@@ -1,12 +1,1 @@
-1709193419715: GET: /api/users1709193486952: 
-GET: /api/users/1004
-
-1709193956212: POST: /api/users 
-1709202791889: POST: /api/users 
-1709202880267: GET: /api/users 
-1709202892427: POST: /api/users 
-1709203033175: POST: /api/users 
-1709203642046: POST: /api/users 
-1709203660853: POST: /api/users 
-1709203712631: POST: /api/users 
-1709203790286: POST: /api/users 
+1709294490064: GET: /api/users 
